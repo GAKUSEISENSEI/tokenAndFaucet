@@ -11,8 +11,8 @@ contract ShmyakToken is ERC20, ERC20Burnable {
     Exchange public exchange;
     constructor() ERC20("ShmyakToken", "SHMK"){
         owner = msg.sender;
-        _cap = 1000000 * (10 ** 18);
-        blockReward = (10 ** 18);
+        _cap = 1000000;
+        blockReward = 1;
 
     }
 
