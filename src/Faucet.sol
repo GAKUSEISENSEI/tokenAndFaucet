@@ -15,7 +15,7 @@ interface IERC20 {
 contract Faucet {
     address payable owner;
     IERC20 public token;
-    uint public withdrawAmount = 50 * (10**18);
+    uint public withdrawAmount = 50;
 
     uint lockTime = 1 seconds;
     event Withdraw(address indexed to, uint indexed amount);
@@ -43,7 +43,7 @@ contract Faucet {
     }
 
     function setWithdrawAmount(uint amount) public onlyOwner{
-        withdrawAmount = amount * (10 ** 18);  
+        withdrawAmount = amount;  
     }
 
     function setLockTime(uint amount) public onlyOwner{
