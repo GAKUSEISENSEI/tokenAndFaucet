@@ -70,7 +70,7 @@ contract Exchange {
 
     function getETHForSHMK(uint _amountSHMK) public{
         require(_amountSHMK > 0, "Cannot exchange zero or negative tokens");
-        require(_amountSHMK.mul(balanceETH).div(token.balanceOf(address(this))) <= balanceETH, "Cannot exchange more tokens than you have");
+        require(_amountSHMK.mul(balanceETH).div(balanceSHMK) <= balanceETH, "Cannot exchange more tokens than you have");
         require(token.balanceOf(msg.sender) >= _amountSHMK, "You do not have enough SHMK");
         uint amountETH = _amountSHMK.mul(balanceETH).div(balanceSHMK);
         balanceETH = balanceETH.sub(amountETH);
